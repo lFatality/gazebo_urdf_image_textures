@@ -1,0 +1,28 @@
+material SimpleCube1Texture{
+technique
+{
+    pass
+    {
+        texture_unit
+        {
+            texture simple_cube1_texture.png
+            scale 1 1
+        }
+    }   
+}
+}
+
+material SimpleCube2Texture{
+technique
+{
+    pass
+    {
+        texture_unit
+        {
+            texture simple_cube2_texture.png
+            scale 1 1
+        }
+    }   
+}
+}
+

@@ -1,0 +1,113 @@
+material Aruco0to3{
+    technique
+    {
+        pass
+        {
+            texture_unit
+            {
+                texture aruco_5x5_1000_0to3.png
+                scale 1 1 1
+            }
+        }   
+    }
+}
+
+material Aruco4to7{
+    technique
+    {
+        pass
+        {
+            texture_unit
+            {
+                texture aruco_5x5_1000_4to7.png
+                scale 1 1 1
+            }
+        }   
+    }
+}
+
+material Aruco8to11{
+    technique
+    {
+        pass
+        {
+            texture_unit
+            {
+                texture aruco_5x5_1000_8to11.png
+                scale 1 1 1
+            }
+        }   
+    }
+}
+
+material Aruco12to15{
+    technique
+    {
+        pass
+        {
+            texture_unit
+            {
+                texture aruco_5x5_1000_12to15.png
+                scale 1 1 1
+            }
+        }   
+    }
+}
+
+
+
+material Aruco16to19{
+    technique
+    {
+        pass
+        {
+            texture_unit
+            {
+                texture aruco_5x5_1000_16to19.png
+                scale 1 1 1
+            }
+        }   
+    }
+}
+
+material Aruco20to23{
+    technique
+    {
+        pass
+        {
+            texture_unit
+            {
+                texture aruco_5x5_1000_20to23.png
+                scale 1 1 1
+            }
+        }   
+    }
+}
+
+material Aruco24to27{
+    technique
+    {
+        pass
+        {
+            texture_unit
+            {
+                texture aruco_5x5_1000_24to27.png
+                scale 1 1 1
+            }
+        }   
+    }
+}
+
+material Aruco28to31{
+    technique
+    {
+        pass
+        {
+            texture_unit
+            {
+                texture aruco_5x5_1000_28to31.png
+                scale 1 1 1
+            }
+        }   
+    }
+}

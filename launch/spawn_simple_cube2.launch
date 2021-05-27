@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Spawns a simple cube with an image texture -->
+<launch>
+
+    <!-- position [meters] -->
+    <arg name="x" default="0.5"/>
+    <arg name="y" default="0"/>
+    <arg name="z" default="0.5"/>
+    
+    <!-- orientation [radians] -->
+    <arg name="R" default="0"/>
+    <arg name="P" default="0"/>
+    <arg name="Y" default="$(eval 0.125 * 3.1415)"/>
+
+    <!-- model definitions -->
+    <arg name="description_name" default="simple_cube2_description"/>
+    <arg name="model_name" default="simple_cube2"/>
+
+    <!-- Set up the cube description-->
+    <param name="$(arg description_name)" command="
+        $(find xacro)/xacro --inorder '$(find example_models)/urdf/simple_cube2/simple_cube2.urdf.xacro'" />
+
+    <!-- Spawn the cube -->
+    <node name="$(anon spawn_gazebo_model)" pkg="gazebo_ros" type="spawn_model" args="
+        -urdf
+        -param $(arg description_name)
+        -model $(arg model_name)
+        -x $(arg x)
+        -y $(arg y)
+        -z $(arg z)
+        -R $(arg R)
+        -P $(arg P)
+        -Y $(arg Y)"
+        respawn="false" output="screen" />
+
+</launch>

@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<robot name="aruco_cube_sim" xmlns:xacro="http://ros.org/wiki/xacro">    
+    <gazebo reference="aruco_cube_link">
+        <material>Gazebo/Black</material>
+    </gazebo>
+
+    <xacro:if value="$(arg use_texture_0to15)">
+        <gazebo reference="marker_plane_1_link">
+            <material>Aruco0to3</material>
+        </gazebo>
+
+        <gazebo reference="marker_plane_2_link">
+            <material>Aruco4to7</material>
+        </gazebo>
+
+        <gazebo reference="marker_plane_3_link">
+            <material>Aruco8to11</material>
+        </gazebo>
+
+        <gazebo reference="marker_plane_4_link">
+            <material>Aruco12to15</material>
+        </gazebo>
+    </xacro:if>
+
+    <xacro:if value="$(arg use_texture_16to31)">
+        <gazebo reference="marker_plane_1_link">
+            <material>Aruco16to19</material>
+        </gazebo>
+
+        <gazebo reference="marker_plane_2_link">
+            <material>Aruco20to23</material>
+        </gazebo>
+
+        <gazebo reference="marker_plane_3_link">
+            <material>Aruco24to27</material>
+        </gazebo>
+
+        <gazebo reference="marker_plane_4_link">
+            <material>Aruco28to31</material>
+        </gazebo>
+    </xacro:if>
+</robot>

@@ -1,0 +1,42 @@
+<?xml version="1.0" ?>
+
+<robot name="simple_cube2" xmlns:xacro="http://ros.org/wiki/xacro">
+
+    <!-- Macro to create a simple cube with an image texture -->
+    <xacro:macro name="simple_cube2" >
+
+        <!-- Gazebo Plugins -->
+        <xacro:include filename="$(find example_models)/urdf/simple_cube2/simple_cube2.gazebo.xacro"/>
+
+        <!-- Links -->
+        <link name="simple_cube2_link">
+            <visual>
+                <origin xyz="0 0 0" rpy="0 0 0" />
+                <geometry>
+                    <box size="0.5 0.125 0.25" />
+                </geometry>
+            </visual>
+            <collision>
+                <origin xyz="0 0 0" rpy="0 0 0" />
+                <geometry>
+                    <box size="0.5 0.125 0.25" />
+                </geometry>
+            </collision>
+
+            <inertial>
+                <mass value="0.01" />
+                <inertia ixx="${1/12*0.01*(2*0.25**2)}"
+                         ixy="0"
+                         ixz="0"
+                         iyy="${1/12*0.01*(2*0.25**2)}"
+                         iyz="0"
+                         izz="${1/12*0.01*(2*0.25**2)}" />
+            </inertial>
+        </link>
+
+    </xacro:macro> <!-- end of the xacro macro -->
+
+    <!-- execute the macro (spawn the cube) -->
+    <xacro:simple_cube2 />
+</robot>
+

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Spawns cube with aruco markers attached to it -->
+<!-- Different markers can be attached via the launch file parameters -->
+<launch>
+
+    <!-- position [meters] -->
+    <arg name="x" default="0"/>
+    <arg name="y" default="0"/>
+    <arg name="z" default="0.5"/>
+    
+    <!-- orientation [radians] -->
+    <arg name="R" default="0"/>
+    <arg name="P" default="0"/>
+    <arg name="Y" default="0"/>
+
+    <!-- model definitions -->
+    <arg name="description_name" default="aruco_cube_description"/>
+    <arg name="model_name" default="aruco_cube"/>
+    <arg name="use_texture_0to15" default="true"/>
+    <arg name="use_texture_16to31" default="false"/>
+
+    <!-- Set up the cube description-->
+    <param name="$(arg description_name)" command="
+        $(find xacro)/xacro --inorder '$(find example_models)/urdf/aruco_cube/aruco_cube.urdf.xacro'
+        use_texture_0to15:=$(arg use_texture_0to15)
+        use_texture_16to31:=$(arg use_texture_16to31)" />
+
+    <!-- Spawn the cube -->
+    <node name="$(anon spawn_gazebo_model)" pkg="gazebo_ros" type="spawn_model" args="
+        -urdf
+        -param $(arg description_name)
+        -model $(arg model_name)
+        -x $(arg x)
+        -y $(arg y)
+        -z $(arg z)
+        -R $(arg R)
+        -P $(arg P)
+        -Y $(arg Y)"
+        respawn="false" output="screen" />
+
+</launch>
