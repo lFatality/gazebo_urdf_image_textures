@@ -1,6 +1,6 @@
-# Gazebo image textures
+# Gazebo URDF image textures
 
-This package gives an example how to add image textures to URDF files so that they are visible in Gazebo.  
+This ROS package gives an example how to add image textures to URDF files so that they are visible in Gazebo.  
 Below you can find some images of the final result.
 
 <img src="flock_of_cubes.png" alt="" title="Flock of cubes" width="auto" height="250" />
