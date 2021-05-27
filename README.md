@@ -134,3 +134,5 @@ not the name of the `.material` file itself.
   There might be a possibility to fix this behavior but I didn't find it.
 
 * This was tested with ROS Noetic and Gazebo 11.5.1 but might also work with other ROS / Gazebo versions.
+
+* The Aruco markers were created with this awesome website (https://chev.me/arucogen/) and then stitched together to the 4-marker images.
