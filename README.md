@@ -48,7 +48,7 @@ roslaunch example_models spawn_aruco_cube.launch
 
 Spawn the aruco cube with another texture.  
 This can be done via the `use_texture_...` parameters.  
-One of the texture is used by default so we set it to `false` and set the other texture to `true`.
+One of the textures is used by default so we set it to `false` and set the other texture to `true`.
 
 ```
 roslaunch example_models spawn_aruco_cube.launch use_texture_0to15:=false use_texture_16to31:=true
@@ -103,14 +103,14 @@ In the `package.xml` of your package add this:
 </export>
 ```
 
-Create a `urdf.xacro` and a `gazebo.xacro` file.
-In the `urdf.xacro` file create your urdf. Also include the `gazebo.xacro` file with
+Create a `your_model.urdf.xacro` and a `your_model.gazebo.xacro` file (note: it does NOT have to be the same name as your `.material` file).
+In the `your_model.urdf.xacro` file create your urdf. Also include the `your_model.gazebo.xacro` file with
 
 ```xml
-<xacro:include filename="$(find your_package_name)/path/to/your_model.gazebo.xacro"/>
+<xacro:include filename="$(find your_package_name)/path/to/model.gazebo.xacro"/>
 ```
 
-To use the texture on a link now, add the following within your `gazebo.xacro` file:
+To use the texture on a link now, add the following within your `your_model.gazebo.xacro` file:
 
 ```xml
 <gazebo reference="your_urdf_link_name">
